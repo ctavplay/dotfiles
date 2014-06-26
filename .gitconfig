@@ -1,0 +1,35 @@
+[branch]
+	autosetuprebase = always
+[color]
+	status = auto
+	branch = auto
+	ui = auto
+[core]
+	autocrlf = false
+	safecrlf = true
+	editor = vim 
+	trustctime = false
+[push]
+	default = tracking
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	pr = pull-request
+	l1 = log --format='%C(yellow)%h%C(reset) -%C(red bold)%d%C(reset) %s %C(green)(%cr) %C(cyan)<%an>%C(reset)'
+	graph = log --all --abbrev-commit --date=short --full-history --graph --format=format:'%C(bold blue)%h%C(reset)\t%C(bold white)%an, %ar (committed %cr)%C(reset)%C(bold green)%d%C(reset)%n       \t%C(white)%s%C(reset)%n'
+	su = submodule update --init --recursive
+	nd = diff --no-ext-diff
+	ndc = diff --no-ext-diff --cached
+[merge]
+	summary = true
+        tool = ediff
+	log = 50
+	conflictstyle = diff3
+
+[mergetool "ediff"]
+        cmd = ~/bin/ediff.sh $LOCAL $REMOTE $MERGED $BASE
+        trustExitCode = true
+[rerere]
+	enabled = true
+[diff]
+	tool = opendiff
+	external = ~/bin/git-diff-cmd.sh
