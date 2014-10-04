@@ -7,7 +7,7 @@
 [core]
 	autocrlf = false
 	safecrlf = true
-	editor = vim 
+	editor = emacs
 	trustctime = false
 [push]
 	default = tracking
@@ -32,4 +32,3 @@
 	enabled = true
 [diff]
 	tool = opendiff
-	external = ~/bin/git-diff-cmd.sh
