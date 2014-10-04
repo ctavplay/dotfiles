@@ -2,6 +2,7 @@
 (load "google-c-style.el")
 (setq line-number-mode t)
 (setq column-number-mode t)
+(setq-default show-trailing-whitespace t)
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.mm\\'" . objc-mode))
 (define-key global-map (kbd "M-g") 'goto-line)
