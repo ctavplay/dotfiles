@@ -4,13 +4,6 @@
 	status = auto
 	branch = auto
 	ui = auto
-[core]
-	autocrlf = false
-	safecrlf = true
-	editor = emacs
-	trustctime = false
-[push]
-	default = tracking
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	pr = pull-request
@@ -24,11 +17,14 @@
         tool = ediff
 	log = 50
 	conflictstyle = diff3
-
-[mergetool "ediff"]
-        cmd = ~/bin/ediff.sh $LOCAL $REMOTE $MERGED $BASE
-        trustExitCode = true
 [rerere]
 	enabled = true
+[user]
+	name = Your Name
+	email = you@yourdomain.com
+[core]
+	editor = /usr/bin/your/favorite/editor
+[push]
+	default = simple
 [diff]
-	tool = opendiff
+	external = ~/bin/git-diff-cmd.sh
